@@ -12,10 +12,16 @@ class StatefulGreetingWithCallback extends React.Component {
     }
 
     handleClick() {
-        this.setState({
+        // Asyncronous
+        this.setState(
+            {
             introduction: "Goodbye!",
             buttonText: "Enter",
-        });
+            }, 
+            () => {
+                // Callback function (executes after)
+            }
+        );
     }
 
     render() {
